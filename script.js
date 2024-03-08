@@ -21,10 +21,29 @@ for(let i = 0; i < colorName.length; i++){
 //Adding a event listener for the the color buttons
 colorsBtn.forEach((btn) => {
     btn.addEventListener('click', () =>{
-        alert(btn.id);
+        switch (btn) {
+            case yellow:
+                selectedColor = 'rgb(243, 243, 81)';
+                break;
+            case green:
+                selectedColor = 'rgb(43, 132, 43)';
+                break;
+            case blue:
+                selectedColor = 'rgb(68, 68, 210)';
+                break;
+            case red:
+                selectedColor = 'rgb(207, 59, 59)';
+                break;
+            case orange:
+                selectedColor = 'rgb(232, 181, 87)';
+                break;
+            case black:
+                selectedColor = 'rgb(37, 37, 37)';
+        }
     })
 })
 
+//Checking the which 'gridBtn' is pressed and calling the 'createGrid' func and giving respective arg
 gridButtons.forEach((btn) => {
     btn.addEventListener('click', () =>{
         switch (btn.id) {
@@ -55,4 +74,9 @@ function createGrid(gridSize){
     }
 }
 
+grids.forEach((cell) => {
+    cell.addEventListener('click',() => {
+        cell.style.backgroundColor = selectedColor;
+    })
+});
 
