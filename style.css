@@ -27,7 +27,6 @@ body{
 .content{
     display: flex;
     gap: 25px;
-    
 }
 
 .buttons button,
@@ -94,3 +93,16 @@ body{
 .grid:hover{
     background-color: rgb(220, 220, 220);
 }
+
+img{
+    margin-top: 40px;
+    height: 30px;
+    width: 30px;
+    transition: all 0.3s ease-in-out;
+}
+img:hover{
+   
+    transform: scale(1.5);
+}
+
+
