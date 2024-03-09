@@ -1,12 +1,15 @@
 let grids = [];
-let colorName = ['yellow', 'green', 'blue', 'red', 'orange', 'black'];
+let colorName = ['yellow', 'green', 'blue', 'red', 'orange', 'black', 'eraser', 'clear'];
 let colorsBtn = [];
-let selectedColor = 'rgb(220, 220, 220)';
+let selectedColor = 'rgb(37, 37, 37)';
+let isMouseDown = false;
 
 const container = document.querySelector('#container');
 const btn16 = document.querySelector('#one');
 const btn32 = document.querySelector('#two');
 const btn64 = document.querySelector('#three');
+const eraserBtn = document.querySelector('#eraser');
+const clearBtn = document.querySelector('#clear');
 
 const gridButtons = [btn16, btn32, btn64];
 
@@ -39,6 +42,15 @@ colorsBtn.forEach((btn) => {
                 break;
             case black:
                 selectedColor = 'rgb(37, 37, 37)';
+                break;
+            case eraser:
+                selectedColor = '#F7F6BB';
+                break;
+            case clear:
+                grids.forEach((cell) => {
+                    cell.style.backgroundColor = '#F7F6BB';
+                })
+                break;
         }
     })
 })
@@ -71,12 +83,26 @@ function createGrid(gridSize){
         grids[i].style.width = `${cellSize}px`;
         grids[i].style.height = `${cellSize}px`; 
         container.appendChild(grids[i]);
+        grids.forEach((cell) => {
+            cell.style.backgroundColor = '#F7F6BB';
+        })
     }
 }
 
 grids.forEach((cell) => {
-    cell.addEventListener('click',() => {
-        cell.style.backgroundColor = selectedColor;
-    })
+    cell.addEventListener('mousedown',() => {
+        isMouseDown = true;
+    });
+    
+    cell.addEventListener('mouseup',() => {
+        isMouseDown = false;
+    });
+    
+    cell.addEventListener('mouseenter',() => {
+        if(isMouseDown) {
+            cell.style.backgroundColor = selectedColor;
+        }
+    });
 });
+
 

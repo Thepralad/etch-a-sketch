@@ -1,17 +1,58 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: "Rubik Mono One", monospace;
+    font-weight: 400;
+    font-style: normal;
+      
 }
 body{
     background-color:#9cb848;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:15px;
+
 }
+.header{
+    padding-top: 28px;
+    font-size: 35px;
+    padding-left: 30px;
+    color: #114232;
+    
+}
+
 .content{
     display: flex;
+    gap: 25px;
+    
+}
+
+.buttons button,
+.tools button{
+    height: 35px;
+    width: 35px;
+    background-color:#F7F6BB;
+    color:#114232;
+    border:none;
 }
 .colors button{
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
     border: none;
+}
+.colors button:hover{
+    border: 3px dashed #114232;
+    box-shadow: 0 29px 52px rgba(0,0,0,0.40), 0 25px 16px rgba(0,0,0,0.20);
+}
+.buttons button:hover{
+    border: 3px dashed #114232;
+    box-shadow: 0 29px 52px rgba(0,0,0,0.40), 0 25px 16px rgba(0,0,0,0.20);
+}
+.tools button:hover{
+    border: 3px dashed #114232;
+    box-shadow: 0 29px 52px rgba(0,0,0,0.40), 0 25px 16px rgba(0,0,0,0.20);
 }
 #yellow{
     background-color: rgb(243, 243, 81);
@@ -39,8 +80,9 @@ body{
     background-color: bisque;
     height: 512px;
     width: 512px;
-    border: 20px solid #114232;
-    border-radius: 12px;
+    border: 14px solid #114232;
+    border-radius: 8px;
+    box-shadow: 0 29px 52px rgba(0,0,0,0.40), 0 25px 16px rgba(0,0,0,0.20);
 }
 .grid{
     background-color: #F7F6BB;
