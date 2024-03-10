@@ -5,4 +5,4 @@ A simple pixel art web app with very minimal and limited features like:
 - Erase tool.
 - All clear tool.
 
-  ![](https://github.com/etch-a-sketch/gif/a.gif)
+  ![](https://github.com/etch-a-sketch/a.gif)
