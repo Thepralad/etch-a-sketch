@@ -14,7 +14,7 @@ const clearBtn = document.querySelector('#clear');
 const gridButtons = [btn16, btn32, btn64];
 
 //Creating a initial grid of size 16x16
-createGrid(16);
+createGrid(64);
 
 //Selecting all the color buttons
 for(let i = 0; i < colorName.length; i++){
